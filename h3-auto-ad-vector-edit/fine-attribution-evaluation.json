@@ -1,0 +1,22 @@
+{
+  "source_package": "gen-performance-s6101",
+  "single_condition_row_ablation": {
+    "rows": [0, 20, 17, 16, 30, 34, 29, 10],
+    "selection": "eight largest L2-norm rows among 36 condition rows",
+    "result": "Every single-row deletion changes framing and vehicle details, but all remain red sports-car/coastal-road ads. No tested row is a clean car, scene, person or color slot."
+  },
+  "ten_block_identity_ablation": {
+    "0_10": "catastrophic mosaic collapse",
+    "10_20": "recognizable moving red sports-car ad, with substantial identity/framing change",
+    "20_30": "catastrophic structured-color collapse",
+    "30_40": "near-flat red output",
+    "40_50": "catastrophic green/black collapse",
+    "conclusion": "Useful computation is distributed across the 50 DiT blocks; skipping a group is not a safe reusable-cache approximation."
+  },
+  "sampler_budget": {
+    "warm_4_step_s": 8.04,
+    "8_step_s": 19.06,
+    "latency_ratio": 2.37,
+    "result": "8 steps produces a coherent ad but not the same trajectory; it is a quality/budget alternative, not a reusable intermediate for a 4-step request."
+  }
+}

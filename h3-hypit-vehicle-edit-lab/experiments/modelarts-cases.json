@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "alpha": 4,
+  "attributes": {
+    "vehicle.paint_color": {
+      "short": "paint",
+      "from": "glossy red body paint",
+      "to": "saturated metallic blue body paint",
+      "reference": "A parked premium metallic royal-blue two-door sports coupe, front three-quarter view in diffuse neutral studio light. The whole car is visible, with strong saturated blue paint across the hood and doors.",
+      "holdout": {
+        "desert-switchback": "Single uninterrupted tracking shot of a {attribute} two-door sports coupe driving through a tan desert switchback in clear daylight. The car's side and hood remain in frame, visible driver, fixed front three-quarter angle.",
+        "industrial-night": "Single uninterrupted side tracking shot of a two-door sports coupe with {attribute} traversing a clean industrial boulevard at dusk. Neutral overhead lighting makes the paint clearly visible on the hood and doors. Visible driver, no cuts.",
+        "forest-arrival": "A two-door sports coupe with {attribute} arrives at a timber forest visitor center and comes to a stop. Single static side-front angle, diffuse daylight, the car is in view throughout, clear panels and a visible driver."
+      }
+    },
+    "vehicle.body_class": {
+      "short": "body",
+      "from": "low two-door sports coupe",
+      "to": "tall premium four-door SUV",
+      "reference": "A parked glossy red premium four-door SUV with a tall cabin, clearly high ground clearance and a conventional tall tailgate, full side profile in diffuse neutral studio light.",
+      "pilot": {
+        "salt-flat": "Low panoramic exterior tracking shot of a glossy red {attribute} driving slowly across a broad pale salt-flat test road, visible driver, fixed camera offset, full vehicle always visible, no cuts."
+      },
+      "holdout": {
+        "orchard-lane": "A glossy red {attribute} drives slowly along a tree-lined orchard lane with a gray gravel surface. Full vehicle visible in continuous side track, daylight, visible driver.",
+        "modern-museum": "A glossy red {attribute} arrives in front of a modern museum, turning gently into a marked parking space. Wide static camera, clear silhouettes and door outlines, visible driver, no cuts.",
+        "city-viaduct": "A glossy red {attribute} travels in one direction under a concrete city viaduct. Camera tracks at fixed side-front offset, full vehicle visible in soft shade throughout, visible driver."
+      }
+    },
+    "vehicle.wheel_design": {
+      "short": "wheel",
+      "from": "silver alloy wheel with exactly five broad solid spokes and large open gaps",
+      "to": "silver alloy wheel with a dense fine crisscross mesh of many slender spokes",
+      "reference": "A single automotive alloy rim with an unmistakable dense fine crisscross mesh of many slender silver spokes. Nearly perpendicular close-up of the front wheel of a stationary red sports coupe, black rubber tire, sharp diffuse daylight.",
+      "donors": [
+        "Stationary performance car front wheel in a catalog macro photograph, fitted with a {attribute}.",
+        "A wheel specialist's studio product image showing a {attribute} mounted inside the same black tire.",
+        "A low-angle quarter view of a parked coupe with a {attribute}, flat neutral lighting and sharp details."
+      ],
+      "pilot": {
+        "studio-wheel": "A parked glossy red two-door coupe in a matte-gray photo studio. The front wheel is fitted with a {attribute}. It stays motionless and fills the center half of the frame during one very slow side camera dolly. Wheel rim and tire are entirely in view, clear side daylight, no cuts."
+      },
+      "holdout": {
+        "garage-wheel": "Stationary red sports coupe parked in a concrete service garage. Macro side view of the front {attribute}; wheel fills the center half of the frame and stays sharp during a gentle push in. Clear tire and fender anchors.",
+        "trackside-wheel": "Close side view of the stationary rear {attribute} on a red sports coupe in a sunny pit lane. Slight camera move, product launch photography, tire and red side panel visible at every moment.",
+        "showroom-wheel": "An uninterrupted close shot of the stationary front {attribute} of a red sports coupe in a softly overcast showroom. Near perpendicular view, clear neighboring red fender, no rotation or occlusion."
+      }
+    },
+    "vehicle.rear_side_window_shape": {
+      "short": "window",
+      "from": "tapered wedge-shaped rear quarter window with a sharply slanted rear edge",
+      "to": "trapezoidal rear quarter window with a near-vertical rear edge",
+      "reference": "Photorealistic true side profile close-up of the rear side glass of a red two-door coupe. The small rear quarter window behind the driver's door is a precisely defined four-sided trapezoid with a near-vertical trailing edge. Brushed black quarter-window trim, plain gray backdrop.",
+      "donors": [
+        "Orthographic catalog side view of the rear cabin of a red coupe with a {attribute}.",
+        "Black trim around a {attribute} behind the door of a two-door coupe, bright clarity.",
+        "Photograph of a sporty car's side glazing emphasizing a {attribute} just behind the driver."
+      ],
+      "pilot": {
+        "studio-window": "Stationary glossy red two-door coupe in a neutral matte studio. It has a {attribute}. Tight straight side shot with the rear quarter window and its black trim centered and occupying at least a quarter of the frame, all four surrounding frame edges, roofline and door seam visible, gentle dolly, no cut."
+      },
+      "holdout": {
+        "glass-garage": "Side-profile medium close-up of a parked red two-door coupe outside a glass garage. Keep the {attribute}, driver door seam and roofline in view for the entire slow camera slide. Soft day light and dark window trim.",
+        "courtyard-window": "A parked red two-door coupe displayed in a stone courtyard. Camera makes a slow arc from the side to slight rear three-quarter angle. Close on the {attribute}, with rear edge and roof join sharp and visible for the whole shot.",
+        "warehouse-window": "Medium close-up of the upper side of a parked red coupe in a neutral photo warehouse, highlighting the {attribute}. Camera remains almost perpendicular, with the roofline, quarter window and door seam visible throughout."
+      }
+    }
+  }
+}

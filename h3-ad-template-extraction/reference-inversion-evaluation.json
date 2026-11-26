@@ -1,0 +1,17 @@
+{
+  "source": "blind 6-second H3 car-ad MP4; the extraction/generation process was not given its original prompt or condition package",
+  "input_to_h3": "the MP4 plus one fixed non-semantic instruction: use <Video 1> as the sole visual reference",
+  "reference_condition_shape": {"text_visual_rows": [1, 653, 5120], "reference_latent": [1, 24, 42, 16, 24]},
+  "original_text_condition_shape_for_audit_only": [1, 36, 5120],
+  "generation_result": "The generated ad retains a red sports car, coastal-road cinematography and a male driver, but it does not reconstruct the source frame-by-frame.",
+  "independent_package_replay": {
+    "generator_received_original_prompt": false,
+    "generator_received_source_mp4": false,
+    "required_model_mode": "H3 Ref2VA checkpoint and LoRA",
+    "decoded_video_hash_both_runs": "302e49c01e7a4154673f66800591e52a76c92b76af924dbb750ed6aa947aa8e6",
+    "decoded_audio_hash_both_runs": "40267887610a2ef6d4e992efa8ae4bc24b9f4fbc3ae1d5f62aa59d5eb84bad58",
+    "result": "exact replay of the reference-conditioned generation"
+  },
+  "inversion_verdict": "This is behavior-equivalent reference conditioning, not unique inversion of the original text condition, initial noise or final latent. H3 exposes no arbitrary-video-to-original-condition inverse.",
+  "operational_limit": "A reference package cannot be replayed with the ordinary FL2VA model; it must carry model-mode metadata. The first attempted mode-mismatched replay exhausted NPU memory, and the corrected Ref2VA replay succeeded after worker restart."
+}

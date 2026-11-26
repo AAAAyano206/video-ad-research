@@ -1,0 +1,38 @@
+<?svml using="@hypit/markup@1"?>
+<svml>
+  <import as="text" from="@hypit/text@1"/>
+  <import as="h3" from="@hypit/minimax-h3@1"/>
+  <import as="time" from="@hypit/timeline-author@1"/>
+  <import as="space" from="@hypit/spatial@1"/>
+  <import as="mediaop" from="@hypit/media-operations@1"/>
+  <import as="visual" from="@hypit/visual-track@1"/>
+  <import as="film" from="@hypit/film@1"/>
+  <import as="html" from="@hypit/html-video@1"/>
+  <import as="look" source="./look.svs"/>
+
+  <!-- Bind both video outputs from the results of the selected group before building. -->
+  <text:Value id="establishing">A side view of the car on a coastal road.</text:Value>
+  <text:Value id="detail">The same car from a closer side angle.</text:Value>
+  <h3:TextVideo id="shot-01" prompt={establishing} duration="15" aspect-ratio="16:9"/>
+  <h3:TextVideo id="shot-02" prompt={detail} duration="15" aspect-ratio="16:9"/>
+
+  <time:Clock id="clock" frame-rate="24"/>
+  <mediaop:Normalize id="opening" source={shot-01.video} clock={clock}
+    video="primary-moving" audio="none" span-authority="video"/>
+  <mediaop:Normalize id="continuation" source={shot-02.video} clock={clock}
+    video="primary-moving" audio="none" span-authority="video"/>
+  <time:Timeline id="cut" clock={clock} end="second.end">
+    <time:Window id="first" from="start" for={opening.extent}/>
+    <time:Window id="second" from="first.end" for={continuation.extent}/>
+  </time:Timeline>
+  <space:Canvas id="canvas" width="768" height="432"/>
+  <space:Frame id="full" within={canvas.bounds} left="0%" top="0%" right="100%" bottom="100%"/>
+  <visual:Track id="picture" timeline={cut.timeline}>
+    <visual:Clip id="first" media={opening.media} during={cut.first} frame={full} fit="contain" z="0"/>
+    <visual:Clip id="second" media={continuation.media} during={cut.second} frame={full} fit="contain" z="0"/>
+  </visual:Track>
+  <film:Film id="ad" canvas={canvas.canvas} timeline={cut.timeline} appearance={look.film.ad}>
+    <film:Track source={picture.visual}/>
+  </film:Film>
+  <html:Video id="final" composition={ad.composition} timeline={cut.timeline}/>
+</svml>

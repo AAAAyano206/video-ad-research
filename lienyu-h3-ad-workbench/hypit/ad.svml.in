@@ -1,0 +1,32 @@
+<?svml using="@hypit/markup@1"?>
+<svml>
+  <import as="text" from="@hypit/text@1"/>
+  <import as="h3" from="@hypit/minimax-h3@1"/>
+  <import as="time" from="@hypit/timeline-author@1"/>
+  <import as="space" from="@hypit/spatial@1"/>
+  <import as="mediaop" from="@hypit/media-operations@1"/>
+  <import as="visual" from="@hypit/visual-track@1"/>
+  <import as="audio" from="@hypit/audio-track@1"/>
+  <import as="film" from="@hypit/film@1"/>
+  <import as="html" from="@hypit/html-video@1"/>
+  <import as="look" source="./look.svs"/>
+
+  <!-- The Run supplies every shot output from a local MP4. -->
+  <text:Value id="slot-note">External shot supplied by the Run.</text:Value>
+  <time:Clock id="clock" frame-rate="$fps"/>
+$shot_declarations
+  <time:Timeline id="cut" clock={clock} end="$timeline_end">
+$windows
+  </time:Timeline>
+  <space:Canvas id="canvas" width="$width" height="$height"/>
+  <space:Frame id="full" within={canvas.bounds} left="0%" top="0%" right="100%" bottom="100%"/>
+  <visual:Track id="picture" timeline={cut.timeline}>
+$picture_clips
+  </visual:Track>
+$audio_track
+  <film:Film id="ad" canvas={canvas.canvas} timeline={cut.timeline} appearance={look.film.ad}>
+    <film:Track source={picture.visual}/>
+$film_audio_track
+  </film:Film>
+  <html:Video id="final" composition={ad.composition} timeline={cut.timeline}/>
+</svml>

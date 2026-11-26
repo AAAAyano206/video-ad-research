@@ -1,0 +1,39 @@
+# === 大体积结果产物（不入库，避免触发 GitHub 100MB 单文件限制）===
+**/results/
+**/r2/
+
+# === 二进制 / 模型权重 / 压缩包 / 音视频 ===
+*.safetensors
+*.ckpt
+*.pt
+*.pth
+*.bin
+*.npy
+*.npz
+*.tar.gz
+*.tgz
+*.zip
+*.7z
+*.mp4
+*.mov
+*.mkv
+*.avi
+*.wav
+*.mp3
+
+# === 运行时 / 构建产物 ===
+**/node_modules/
+**/__pycache__/
+*.pyc
+**/.venv/
+**/venv/
+**/.next/
+**/dist/
+**/build/
+
+# === 系统 / IDE ===
+.DS_Store
+**/.DS_Store
+.idea/
+.vscode/
+*.iml

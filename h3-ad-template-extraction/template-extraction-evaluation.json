@@ -1,0 +1,18 @@
+{
+  "blind_input": "60.032-second MP4 only; the extractor did not read prompts, H3 packages, seeds or storyboard metadata",
+  "known_audit_truth": {"shots": 4, "boundaries_s": [15.008, 30.016, 45.024]},
+  "pixel_pipeline": {
+    "shot_detection": {"detected_shots": 2, "detected_boundary_s": [47.083], "true_boundary_recall": "0/3", "false_boundaries": 1},
+    "vehicle_tracking": {"tracked_frames": 1439, "total_frames": 1440, "coverage": 0.9993},
+    "vehicle_mask_quality": "partial: red-HSV reliably follows the red product but often covers only painted highlights/bumper rather than the full car",
+    "person_localization": "not available"
+  },
+  "h3_reference_closed_loop": {
+    "input": "blind MP4 plus a fixed generic instruction, never the source prompt",
+    "semantic_transfer": "car-ad subject, road/coast style and male-driver motif retained",
+    "source_reconstruction": "failed; output is a new reference-conditioned ad, not the same timeline",
+    "package_replay": "passed bit-exact decoded video/audio when replayed with matching Ref2VA model metadata"
+  },
+  "workbench_verdict": "H3 can provide holistic video-reference conditioning and deterministic condition-package replay, but it does not expose object masks, editable semantic slots or inverse conditions. A production workbench still needs a dedicated detector/segmenter/tracker and human-confirmed slot schema before applying H3 vector edits.",
+  "minimum_safe_template": ["shot boundaries with manual correction", "vehicle/person/scene masks from a dedicated vision model", "slot-to-condition-direction mapping", "model-mode/version/hash", "first-frame latent policy", "per-shot initial noise"]
+}

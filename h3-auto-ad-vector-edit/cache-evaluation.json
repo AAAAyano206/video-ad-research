@@ -1,0 +1,21 @@
+{
+  "exact_content_address": {
+    "cold_s": 15.315,
+    "warm_alias_s": [1.033, 1.036],
+    "speedup_vs_cold": [14.83, 14.79],
+    "decoded_video_hash": "f44b21420d9f7337020045b249a589e4e6f124b3fa20bcaf72c6a0faeffe7714",
+    "decoded_audio_hash": "bac4b456f6beb60eeaf084dd3b592ab45d3f6b20d7db5054b0bf3492ac4160de",
+    "quality": "bit-identical decoded video and audio for all three aliases"
+  },
+  "edited_condition": {
+    "elapsed_s": 8.041,
+    "cache_hit": false,
+    "reason": "The complete dependency key includes condition, latent and noise hashes; changing the condition vector changes the key."
+  },
+  "cache_levels": {
+    "L0_content_package": "validated and reusable across package aliases after canonicalization",
+    "L1_prompt_encoder": "validated by replaying saved condition packages without executing or transmitting the original prompt",
+    "L2_H3_attention_or_block": "not available: H3 recomputes joint full-sequence attention in every block and step; no KV cache exists, and a correct key must miss after a condition edit"
+  },
+  "conclusion": "Exact repeats can be made very fast, but vector-edited variants cannot safely inherit H3 layer results. Same-GPU batching still saves model residency and scheduling overhead, not semantic-cache computation."
+}

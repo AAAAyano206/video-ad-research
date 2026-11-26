@@ -1,0 +1,18 @@
+{
+  "id": "h3-hypit-paint-parts-v1",
+  "direction_alpha": 4.0,
+  "attribute": "vehicle.paint_color",
+  "target": "the complete red exterior paint appears blue wherever the original is clearly visible; preserve original car shape, wheels, lamps, glass, calipers, reflections not caused by paint, scene and timing",
+  "holdout_seeds": [11101, 11102, 11103],
+  "holdout": {
+    "ferry-ramp": "A continuous locked side tracking shot of a metallic deep-red sports coupe rolling along a light grey ferry loading ramp on an overcast day, its painted red rear spoiler, amber side marker, alloy wheels, black tyres, and dark glass visibly distinct. Industrial railings are grey. No cut and no overlay. Automotive commercial, subtle harbour and tyre ambience.",
+    "service-tunnel": "A continuous three-quarter rear tracking shot of a deep-red sports coupe with a painted red rear wing moving gently through the service tunnel of a mountain road. Bright openings alternate with deep ambient shadow across the painted doors. The car has neutral grey alloy wheels and red brake calipers, amber indicators, black glass and tyres. Match motion with one continuous dolly, no cut, no graphics. Low engine ambience.",
+    "brick-paddock": "A single tripod shot of a metallic red sports coupe passing left to right across a grey paddock in front of aged red-brick buildings. Car visible in full side profile with a small painted rear spoiler and visible metal wheel rims, amber side marker, clear glass and red calipers. Restrained commercial image, no hard cut or extreme lens flare, quiet distant crowd."
+  },
+  "story": [
+    {"id":"causeway", "duration":15, "seed":11211, "affected":true, "previous_frame":false, "prompt":"A fifteen-second automotive commercial segment. A metallic deep-red sports coupe with a small body-colour rear wing, distinctive silver five-spoke rims and smoked glass glides along a misty river causeway past low concrete rails. A slow fairly close parallel side tracking shot. Keep the car readable, no cuts, overcast soft light, low engine and wind sound."},
+    {"id":"causeway-continuation", "duration":15, "seed":11212, "affected":true, "previous_frame":true, "prompt":"Continue the same automotive commercial from the first frame, tracking the same metallic deep-red sports coupe from the same side as it approaches a curve in the misty river causeway. Keep the same rear wing, wheels, smoked glass, fog and continuous movement. A slowly widening side tracking shot, no internal cut, low engine and wind sound."},
+    {"id":"river-insert", "duration":6, "seed":11213, "affected":false, "previous_frame":false, "prompt":"A clean cutaway for an automotive commercial. A wide static landscape without any vehicles or people, quiet mist above a river and a grey concrete bridge in the distance. Cool soft light, no camera cut, no titles, just wind and water ambience."}
+  ],
+  "acceptance": {"holdout_strict_at_least":8, "expected_holdout_pairs":9, "comparative_cost_denominator":"strictly accepted finished ads"}
+}

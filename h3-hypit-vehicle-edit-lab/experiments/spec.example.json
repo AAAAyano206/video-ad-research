@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "shots": [
+    {
+      "phase": "pilot",
+      "id": "exterior",
+      "attribute_id": "vehicle.paint_color",
+      "settings": { "duration": 6, "width": 384, "height": 256, "steps": 4 },
+      "takes": [
+        { "id": "take-1", "seed": 101, "package": "paint-exterior-101" },
+        { "id": "take-2", "seed": 202, "package": "paint-exterior-202" },
+        { "id": "take-3", "seed": 303, "package": "paint-exterior-303" }
+      ]
+    },
+    {
+      "phase": "pilot",
+      "id": "wide",
+      "attribute_id": "vehicle.body_class",
+      "settings": { "duration": 6, "width": 384, "height": 256, "steps": 4 },
+      "takes": [
+        { "id": "take-1", "seed": 101, "package": "class-wide-101" },
+        { "id": "take-2", "seed": 202, "package": "class-wide-202" },
+        { "id": "take-3", "seed": 303, "package": "class-wide-303" }
+      ]
+    },
+    {
+      "phase": "pilot",
+      "id": "wheel-closeup",
+      "attribute_id": "vehicle.wheel_design",
+      "settings": { "duration": 6, "width": 768, "height": 432, "steps": 4 },
+      "takes": [
+        { "id": "take-1", "seed": 101, "package": "wheel-closeup-101" },
+        { "id": "take-2", "seed": 202, "package": "wheel-closeup-202" },
+        { "id": "take-3", "seed": 303, "package": "wheel-closeup-303" }
+      ]
+    },
+    {
+      "phase": "pilot",
+      "id": "side-profile",
+      "attribute_id": "vehicle.rear_side_window_shape",
+      "settings": { "duration": 6, "width": 768, "height": 432, "steps": 4 },
+      "takes": [
+        { "id": "take-1", "seed": 101, "package": "window-side-101" },
+        { "id": "take-2", "seed": 202, "package": "window-side-202" },
+        { "id": "take-3", "seed": 303, "package": "window-side-303" }
+      ]
+    },
+    {
+      "phase": "continuity",
+      "id": "shot-01",
+      "attribute_id": "vehicle.paint_color",
+      "settings": { "duration": 15, "width": 768, "height": 432, "steps": 4 },
+      "takes": [{ "id": "chain-1", "seed": 401, "package": "continuity-shot-01-401" }]
+    },
+    {
+      "phase": "continuity",
+      "id": "shot-02",
+      "attribute_id": "vehicle.paint_color",
+      "first_frame_from": "shot-01",
+      "settings": { "duration": 15, "width": 768, "height": 432, "steps": 4 },
+      "takes": [{ "id": "chain-1", "seed": 402, "package": "continuity-shot-02-402" }]
+    }
+  ]
+}

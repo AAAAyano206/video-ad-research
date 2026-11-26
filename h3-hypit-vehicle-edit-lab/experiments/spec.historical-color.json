@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "shots": [
+    {
+      "phase": "pilot",
+      "id": "coastal-performance",
+      "attribute_id": "vehicle.paint_color",
+      "settings": { "duration": 6, "width": 384, "height": 256, "steps": 4 },
+      "takes": [
+        { "id": "seed-6101", "seed": 6101, "package": "gen-performance-s6101" },
+        { "id": "seed-6102", "seed": 6102, "package": "gen-performance-s6102" },
+        { "id": "seed-6103", "seed": 6103, "package": "gen-performance-s6103" }
+      ]
+    }
+  ]
+}

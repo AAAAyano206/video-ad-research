@@ -1,0 +1,12 @@
+{
+  "method": "Manual review of a fixed 3-second frame for every story/seed/variant, backed by the 45 source MP4 files. Pass requires the requested attribute and preservation of the original ad subject/story context.",
+  "sample_count": 9,
+  "acceptance": {"target_pass_min": 7, "per_story_min": 2, "preservation_pass_min": 7},
+  "results": {
+    "color_red_to_blue": {"target_pass": 9, "preservation_pass": 9, "accepted": true, "note": "All three stories and all seeds retain the coupe and setting while changing red to blue."},
+    "coupe_to_suv": {"target_pass": 9, "preservation_pass": 9, "accepted": true, "note": "All outputs become SUVs and retain the broad story/setting; fine vehicle identity and original red color are not preserved."},
+    "coast_to_snow": {"target_pass": 0, "preservation_pass": 0, "accepted": false, "note": "The edit collapses to unrelated women/anime/singer imagery; neither snow-road target nor vehicle/story is preserved."},
+    "male_to_female": {"target_pass": 9, "preservation_pass": 0, "accepted": false, "note": "Women appear consistently, but the vehicle and ad action disappear, so this is not an independent person-slot edit."}
+  },
+  "overall": "Vector editing is repeatable for color and coarse vehicle class, but not universal or slot-independent for scene/person edits."
+}

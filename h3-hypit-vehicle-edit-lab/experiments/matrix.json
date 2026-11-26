@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "status": "planned",
+  "attributes": [
+    {
+      "id": "vehicle.paint_color",
+      "granularity": "global_appearance",
+      "source": "red",
+      "target": "blue",
+      "preferred_views": ["exterior_side", "exterior_front_three_quarter"],
+      "protected": ["vehicle_class", "wheel_design", "window_shape", "driver", "scene", "camera_motion"]
+    },
+    {
+      "id": "vehicle.body_class",
+      "granularity": "global_structure",
+      "source": "two_door_sports_coupe",
+      "target": "suv",
+      "preferred_views": ["exterior_side_wide", "exterior_front_three_quarter_wide"],
+      "protected": ["paint_color", "driver", "scene", "driving_direction", "camera_motion"]
+    },
+    {
+      "id": "vehicle.wheel_design",
+      "granularity": "local_appearance",
+      "source": "solid_five_spoke",
+      "target": "mesh_multispoke",
+      "preferred_views": ["front_wheel_closeup", "rear_wheel_closeup"],
+      "protected": ["vehicle_class", "wheel_position", "wheel_size", "tire", "paint_color", "window_shape", "scene"]
+    },
+    {
+      "id": "vehicle.rear_side_window_shape",
+      "granularity": "local_geometry",
+      "source": "tapered_wedge",
+      "target": "trapezoid_near_vertical_rear_edge",
+      "preferred_views": ["side_profile", "rear_three_quarter"],
+      "protected": ["vehicle_class", "roofline", "door", "glass_tint", "paint_color", "wheel_design", "scene"]
+    }
+  ],
+  "variants": {
+    "A0": "baseline_replay",
+    "A1": "vector_only",
+    "A2": "norm_matched_random_direction",
+    "A3": "vector_with_first_frame_sync",
+    "A4": "reference_media_regeneration"
+  },
+  "phases": {
+    "pilot": {
+      "seeds_per_shot": 3,
+      "variants": ["A0", "A1", "A2", "A4"]
+    },
+    "holdout": {
+      "shots_per_attribute": 3,
+      "seeds_per_shot": 3,
+      "variants": ["A0", "A1", "A2"],
+      "min_passed_pairs_per_attribute": 8,
+      "min_clear_review_frames_per_pair": 3
+    },
+    "continuity": {
+      "shot_count": 2,
+      "variants": ["A0", "A1", "A3"],
+      "review_seconds_each_side_of_cut": 0.5
+    }
+  }
+}

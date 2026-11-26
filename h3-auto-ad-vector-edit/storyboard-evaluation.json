@@ -1,0 +1,8 @@
+{
+  "construction": "Four native 15.008-second H3 shots; shots 2-4 use the previous shot's last frame as first-frame conditioning. 30-second deliverables concatenate shots 1-2; 60-second deliverables concatenate shots 1-4.",
+  "durations_s": {"base_30": 30.032, "base_60": 60.032, "blue_30": 30.032, "blue_60": 60.032},
+  "base_continuity": {"vehicle": "pass with minor model-detail morphing", "male_driver": "pass", "coastal_story": "pass", "shot_boundary_visual_match": "pass"},
+  "blue_vector_variant": {"within_shot_color": "pass", "vehicle_and_story": "pass", "shot_boundary_color": "fail"},
+  "boundary_evidence": "At 14.8s the edited shot is blue, but at 15.2s the next shot starts red; the same reset is visible at later boundaries because the unedited first-frame latent is stronger than the edited text-condition direction.",
+  "overall": "H3 shot chaining produces usable 30/60-second story continuity. Applying only a condition-vector edit to independently cached shots does not yield seamless cross-shot attribute continuity unless the first-frame/image latent is edited or regenerated too."
+}
